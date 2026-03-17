@@ -1,7 +1,5 @@
-version: "3.8"
-
 services:
-  db:
+  mysqldb:
     platform: linux/arm64
     image: mysql:8.0
     restart: unless-stopped
