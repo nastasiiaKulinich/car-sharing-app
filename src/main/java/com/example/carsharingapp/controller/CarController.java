@@ -1,7 +1,7 @@
 package com.example.carsharingapp.controller;
 
-import com.example.carsharingapp.dto.CarDto;
-import com.example.carsharingapp.dto.CreateCarRequestDto;
+import com.example.carsharingapp.dto.car.CarDto;
+import com.example.carsharingapp.dto.car.CreateCarRequestDto;
 import com.example.carsharingapp.service.car.CarService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

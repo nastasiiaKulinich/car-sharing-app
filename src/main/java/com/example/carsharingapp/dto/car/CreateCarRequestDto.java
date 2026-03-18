@@ -1,4 +1,4 @@
-package com.example.carsharingapp.dto;
+package com.example.carsharingapp.dto.car;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
