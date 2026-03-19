@@ -32,7 +32,6 @@ public class CarController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Get all cars", description = "Get a list of available cars")
-    @PreAuthorize("hasRole('CUSTOMER')")
     public List<CarDto> getAll(Pageable pageable) {
         return carService.findAll(pageable);
     }
@@ -40,7 +39,6 @@ public class CarController {
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Get a car by id", description = "Get car's detailed information")
-    @PreAuthorize("hasRole('CUSTOMER')")
     public CarDto getCarById(@PathVariable @Positive Long id) {
         return carService.findById(id);
     }
