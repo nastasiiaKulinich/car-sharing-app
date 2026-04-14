@@ -1,4 +1,4 @@
-package com.example.carsharingapp.service.user;
+package com.example.carsharingapp.service.user.impl;
 
 import com.example.carsharingapp.dto.user.UserRegistrationRequestDto;
 import com.example.carsharingapp.dto.user.UserResponseDto;
@@ -12,6 +12,7 @@ import com.example.carsharingapp.model.Role;
 import com.example.carsharingapp.model.User;
 import com.example.carsharingapp.repository.RoleRepository;
 import com.example.carsharingapp.repository.UserRepository;
+import com.example.carsharingapp.service.user.UserService;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
