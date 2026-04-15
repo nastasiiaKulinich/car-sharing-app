@@ -30,7 +30,7 @@ public class NotificationTemplates {
         };
     }
 
-    private static String formatNewRental(Long carId, String carModel, String carBrand,
+    private static String formatNewRental(Long carId, String carBrand, String carModel,
                                           Long userId, LocalDate rentalDate,
                                           LocalDate returnDate) {
         return """
@@ -46,7 +46,7 @@ public class NotificationTemplates {
                 returnDate.format(DATE_FORMATTER));
     }
 
-    private static String formatOverdueRental(Long carId, String carModel, String carBrand,
+    private static String formatOverdueRental(Long carId, String carBrand, String carModel,
                                               String userName, String userEmail,
                                               LocalDate dateForReturn, Long overduePeriod) {
         return """

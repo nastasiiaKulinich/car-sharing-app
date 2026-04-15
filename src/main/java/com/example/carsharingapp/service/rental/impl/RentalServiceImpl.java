@@ -55,8 +55,8 @@ public class RentalServiceImpl implements RentalService {
         notificationService.sendMessageAdmin(NotificationTemplates.getTemplate(
                 NotificationType.NEW_RENTAL,
                 car.getId(),
-                car.getModel(),
                 car.getBrand(),
+                car.getModel(),
                 user.getId(),
                 rentalDto.getRentalDate(),
                 rentalDto.getReturnDate()));
