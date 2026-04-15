@@ -3,6 +3,7 @@ package com.example.carsharingapp.config;
 import com.example.carsharingapp.service.notification.telegram.TelegramBot;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -22,6 +23,11 @@ public class TelegramConfig {
     private long chatId;
 
     @Bean
+    @ConditionalOnProperty(
+            name = "telegram.bot.enabled",
+            havingValue = "true",
+            matchIfMissing = false
+    )
     public TelegramBot telegramBot() {
         TelegramBot telegramBot = new TelegramBot(this);
         try {
