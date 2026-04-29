@@ -1,5 +1,6 @@
 package com.example.carsharingapp.service.notification.template;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -17,7 +18,6 @@ public class NotificationTemplates {
                     (LocalDate) params[4],
                     (LocalDate) params[5]
             );
-
             case OVERDUE_RENTAL -> formatOverdueRental(
                     (Long) params[0],
                     (String) params[1],
@@ -26,6 +26,15 @@ public class NotificationTemplates {
                     (String) params[4],
                     (LocalDate) params[5],
                     (Long) params[6]
+            );
+            case PAYMENT_SUCCESS -> formatPaymentSuccess(
+                    (Long) params[0],
+                    (BigDecimal) params[1],
+                    (Long) params[2]
+            );
+            case PAYMENT_FAILED -> formatPaymentFailed(
+                    (Long) params[0],
+                    (Long) params[1]
             );
         };
     }
@@ -60,5 +69,22 @@ public class NotificationTemplates {
                 Overdue: %d days
                 """.formatted(carId, carBrand, carModel, userName, userEmail,
                 dateForReturn.format(DATE_FORMATTER), overduePeriod);
+    }
+
+    private static String formatPaymentSuccess(Long paymentId, BigDecimal amount, Long rentalId) {
+        return """
+                💰 Payment Successful 💰
+                Payment ID: %d
+                Amount: %s
+                For Rental: %d
+                """.formatted(paymentId, amount, rentalId);
+    }
+
+    private static String formatPaymentFailed(Long paymentId, Long rentalId) {
+        return """
+                ❌ Payment Failed ❌
+                Payment ID: %d
+                Rental ID: %d
+                """.formatted(paymentId, rentalId);
     }
 }

@@ -150,6 +150,12 @@
             <artifactId>telegrambots-spring-boot-starter</artifactId>
             <version>6.8.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.stripe</groupId>
+            <artifactId>stripe-java</artifactId>
+            <version>32.0.0</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
